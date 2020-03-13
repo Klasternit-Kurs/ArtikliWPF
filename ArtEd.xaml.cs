@@ -19,10 +19,28 @@ namespace ArtikliWPF
 	/// </summary>
 	public partial class ArtEd : Window
 	{
+
 		public ArtEd()
 		{
 			InitializeComponent();
+			
 			DataContext = new Artikal();
+
+			this.BindingGroup = new BindingGroup();
+		}
+
+		private void Unos(object sender, RoutedEventArgs e)
+		{
+			if (this.BindingGroup.CommitEdit())
+			{
+				this.DialogResult = true;
+				this.Close();
+			}
+		}
+
+		private void Otkazi(object sender, RoutedEventArgs e)
+		{
+				this.Close();	
 		}
 	}
 }

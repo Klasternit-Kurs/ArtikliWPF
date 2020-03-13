@@ -29,25 +29,38 @@ namespace ArtikliWPF
 			Art.Add(new Artikal("001", "Plazam", 100, 25));
 			Art.Add(new Artikal("002", "Nesto", 200, 12));
 			Art.Add(new Artikal("003", "Nesto trece", (decimal)54.5, 90));
-
-			
-
 			dg.ItemsSource = Art;
 		}
-
+		private void Izmena(object sender, RoutedEventArgs e)
+		{
+			if (dg.SelectedItem != null)
+			{
+				ArtEd Editor = new ArtEd();
+				Editor.Owner = this;
+				Editor.DataContext = dg.SelectedItem;
+				Editor.ShowDialog();
+			}
+		}
 		private void Dodavanje(object sender, RoutedEventArgs e)
 		{
 			ArtEd Editor = new ArtEd();
 			Editor.Owner = this;
-			Editor.ShowDialog();
+			if (Editor.ShowDialog() == true)
+			{
+				Art.Add(Editor.DataContext as Artikal);
+			}
+
 		}
+
 		private void Brisanje(object sender, RoutedEventArgs e)
 		{
-
+			if (dg.SelectedItem != null)
+			{
+				Art.Remove(dg.SelectedItem as Artikal);
+			}
 		}
-		private void Izmena(object sender, RoutedEventArgs e)
-		{
 
-		}
+
+		
 	}
 }

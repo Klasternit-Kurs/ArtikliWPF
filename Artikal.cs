@@ -28,7 +28,6 @@ namespace ArtikliWPF
 			} 
 		}
 
-
 		public Artikal() { }
 
 		public Artikal(string s, string n, decimal c, int m)
