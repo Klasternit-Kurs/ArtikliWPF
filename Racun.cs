@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ArtikliWPF
 {
-	class Racun
+	public class Racun
 	{
 		public List<Artikal> Kljuc = new List<Artikal>();
 		public List<int> Vrednost = new List<int>();

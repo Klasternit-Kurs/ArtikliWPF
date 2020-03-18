@@ -25,12 +25,7 @@
 			</DockPanel>
 		</TabItem>
 		<TabItem Header="Racuni">
-			<DataGrid AutoGenerateColumns="False" Name="dgRacuni" ColumnWidth="*" IsReadOnly="True" SelectionMode="Single" FontSize="42" >
-				<DataGrid.Columns>
-					<DataGridTextColumn Header="Artikal" Binding="{Binding Key.Naziv}"/>
-					<DataGridTextColumn Header="Kolicina" Binding="{Binding Value}"/>
-				</DataGrid.Columns>
-			</DataGrid>
+			<Button Content="Novi racun" Click="NoviRacun"/>
 		</TabItem>
 	</TabControl>
 

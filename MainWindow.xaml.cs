@@ -30,12 +30,6 @@ namespace ArtikliWPF
 			Art.Add(new Artikal("002", "Nesto", 200, 12));
 			Art.Add(new Artikal("003", "Nesto trece", (decimal)54.5, 90));
 			dg.ItemsSource = Art;
-
-			Racun test = new Racun();
-			test.Artikli.Add(Art[0], 5);
-			test.Artikli.Add(Art[2], 1);
-			test.Artikli.Add(Art[1], 7);
-			dgRacuni.ItemsSource = test.Artikli;
 		}
 		private void Izmena(object sender, RoutedEventArgs e)
 		{
@@ -66,7 +60,12 @@ namespace ArtikliWPF
 			}
 		}
 
+		private void NoviRacun(object sender, RoutedEventArgs e)
+		{
+			RacuniEd r = new RacuniEd(Art.ToList());
+			r.Owner = this;
+			r.ShowDialog();
 
-		
+		}
 	}
 }
