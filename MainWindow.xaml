@@ -6,21 +6,32 @@
         xmlns:local="clr-namespace:ArtikliWPF"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+	<TabControl>
+		<TabItem Header="Artikli">
 	<DockPanel>
-		<StackPanel DockPanel.Dock="Right">
-			<Button Content="Dodaj" FontSize="42" Click="Dodavanje" />
-			<Button Content="Obrisi" FontSize="42" Click="Brisanje" />
-			<Button Content="Izmeni" FontSize="42" Click="Izmena" />
-		</StackPanel>
-		<DataGrid AutoGenerateColumns="False" Name="dg" FontSize="42" IsReadOnly="True" SelectionMode="Single" ColumnWidth="*">
-			<DataGrid.Columns>
-				<DataGridTextColumn Header="Sifra" Binding="{Binding Sifra}"/>
-				<DataGridTextColumn Header="Naziv" Binding="{Binding Naziv}"/>
-				<DataGridTextColumn Header="Ulazna cena" Binding="{Binding Ucena}"/>
-				<DataGridTextColumn Header="Marza" Binding="{Binding Marza}"/>
-			</DataGrid.Columns>
-			
-		</DataGrid>
-	</DockPanel>
+			<StackPanel DockPanel.Dock="Right">
+				<Button Content="Dodaj" FontSize="42" Click="Dodavanje" />
+				<Button Content="Obrisi" FontSize="42" Click="Brisanje" />
+				<Button Content="Izmeni" FontSize="42" Click="Izmena" />
+			</StackPanel>
+			<DataGrid AutoGenerateColumns="False" Name="dg" FontSize="42" IsReadOnly="True" SelectionMode="Single" ColumnWidth="*">
+					<DataGrid.Columns>
+						<DataGridTextColumn Header="Sifra" Binding="{Binding Sifra}"/>
+						<DataGridTextColumn Header="Naziv" Binding="{Binding Naziv}"/>
+						<DataGridTextColumn Header="Ulazna cena" Binding="{Binding Ucena}"/>
+						<DataGridTextColumn Header="Marza" Binding="{Binding Marza}"/>
+					</DataGrid.Columns>
+				</DataGrid>
+			</DockPanel>
+		</TabItem>
+		<TabItem Header="Racuni">
+			<DataGrid AutoGenerateColumns="False" Name="dgRacuni" ColumnWidth="*" IsReadOnly="True" SelectionMode="Single" FontSize="42" >
+				<DataGrid.Columns>
+					<DataGridTextColumn Header="Artikal" Binding="{Binding Key.Naziv}"/>
+					<DataGridTextColumn Header="Kolicina" Binding="{Binding Value}"/>
+				</DataGrid.Columns>
+			</DataGrid>
+		</TabItem>
+	</TabControl>
 
 </Window>

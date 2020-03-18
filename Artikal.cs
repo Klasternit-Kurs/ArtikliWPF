@@ -38,5 +38,10 @@ namespace ArtikliWPF
 			Marza = m;
 		}
 
+		public override string ToString()
+		{
+			return $"{Sifra} -- {Naziv}";
+		}
+
 	}
 }
