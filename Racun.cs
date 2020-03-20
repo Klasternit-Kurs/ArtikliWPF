@@ -8,8 +8,10 @@ namespace ArtikliWPF
 {
 	public class Racun
 	{
-		public List<Artikal> Kljuc = new List<Artikal>();
-		public List<int> Vrednost = new List<int>();
+		public DateTime datumIzdavanja { get; set; }
+
+		//public List<Artikal> Kljuc = new List<Artikal>();
+		//public List<int> Vrednost = new List<int>();
 
 		public Dictionary<Artikal, int> Artikli { get; set; } = new Dictionary<Artikal, int>();
 

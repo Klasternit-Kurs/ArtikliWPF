@@ -57,5 +57,12 @@ namespace ArtikliWPF
 				MessageBox.Show("Ne postoji artikal sa tom sifrom!");
 			}
 		}
+
+		private void Snimi(object sender, RoutedEventArgs e)
+		{
+			TrenutniRacun.datumIzdavanja = DateTime.Now;
+			DialogResult = true;
+			this.Close();
+		}
 	}
 }

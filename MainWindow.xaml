@@ -25,7 +25,15 @@
 			</DockPanel>
 		</TabItem>
 		<TabItem Header="Racuni">
-			<Button Content="Novi racun" Click="NoviRacun"/>
+			<StackPanel>
+				<DataGrid Name="dgRacuni" IsReadOnly="True" ColumnWidth="*" AutoGenerateColumns="False">
+					<DataGrid.Columns>
+						<DataGridTextColumn Header="Datum" Binding="{Binding datumIzdavanja}"/>
+						<DataGridTextColumn Header="Total" Binding="{Binding Total}"/>
+					</DataGrid.Columns>
+				</DataGrid>
+				<Button Content="Novi racun" Click="NoviRacun"/>
+			</StackPanel>
 		</TabItem>
 	</TabControl>
 

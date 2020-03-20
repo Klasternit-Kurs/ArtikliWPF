@@ -16,5 +16,6 @@
 				<DataGridTextColumn Header="Kolicina" Binding="{Binding Value}"/>
 			</DataGrid.Columns>
 		</DataGrid>
+		<Button FontSize="42" Content="Zavrsi racun" Click="Snimi"/>
 	</StackPanel>
 </Window>

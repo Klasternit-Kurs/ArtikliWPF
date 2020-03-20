@@ -22,6 +22,7 @@ namespace ArtikliWPF
 	public partial class MainWindow : Window
 	{
 		public ObservableCollection<Artikal> Art = new ObservableCollection<Artikal>();
+		public ObservableCollection<Racun> Racuni = new ObservableCollection<Racun>();
 		
 		public MainWindow()
 		{
@@ -30,6 +31,7 @@ namespace ArtikliWPF
 			Art.Add(new Artikal("002", "Nesto", 200, 12));
 			Art.Add(new Artikal("003", "Nesto trece", (decimal)54.5, 90));
 			dg.ItemsSource = Art;
+			dgRacuni.ItemsSource = Racuni;
 		}
 		private void Izmena(object sender, RoutedEventArgs e)
 		{
@@ -64,8 +66,10 @@ namespace ArtikliWPF
 		{
 			RacuniEd r = new RacuniEd(Art.ToList());
 			r.Owner = this;
-			r.ShowDialog();
-
+			if (r.ShowDialog() == true)
+			{
+				Racuni.Add(r.TrenutniRacun);
+			}
 		}
 	}
 }
